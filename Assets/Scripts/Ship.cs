@@ -64,8 +64,8 @@ public class Ship : MonoBehaviour {
 
         mass.val = 10;
         money.val = 0;
-        force.val = 20;
-        maneuverability.val = 40;
+        force.val = 10;
+        maneuverability.val = 10;
         fireTime.val = 0.2f;
 
         fuel.val = 10;
@@ -103,9 +103,10 @@ public class Ship : MonoBehaviour {
             float acceleration = Acceleration();
             float steering = Steering();
 
-            float totalMass = mass.val + fuel.val + metal.val;  //Life support doesn't weight much.
+            float totalMass = (mass.val + fuel.val + metal.val)*0.5f;  //Life support doesn't weight much.
 
-            dir += Time.deltaTime * steering * maneuverability.val / totalMass;
+            //4 is to roughly convert to Moment of Inertia.
+            dir += 4*Time.deltaTime * steering * maneuverability.val / totalMass;
             rigidBody.mass = totalMass;
             rigidBody.AddForce(100 * Time.deltaTime * transform.right * acceleration * force.val);
 
@@ -175,7 +176,7 @@ public class Ship : MonoBehaviour {
 
     float Steering()
     {
-        return Input.GetAxis("Horizontal");
+        return -Input.GetAxis("Horizontal");
     }
 
     float Acceleration()

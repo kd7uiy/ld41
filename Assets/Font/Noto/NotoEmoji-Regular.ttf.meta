@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: a6e156d6181e3a64181cb3605cefb084
+timeCreated: 1499474038
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Noto Emoji
+  fontNames:
+  - Noto Emoji
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
